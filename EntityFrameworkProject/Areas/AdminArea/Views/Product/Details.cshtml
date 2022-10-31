@@ -1,0 +1,64 @@
+﻿@model ProductUpdateVM
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            Product detail
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                       
+                        <td>
+                            @foreach (var item in Model.Images)
+                            {
+                                <img src="~/img/@item.Image" style="width:150px; height:150px" alt="Alternate Text" />
+                            }
+                        </td>
+                       
+                        
+                        <td>
+                            @Html.Raw(Model.Title)
+                        </td>
+                        <td>
+                            @Html.Raw(Model.Description)
+                        </td>
+                        <td>
+                            @Html.Raw(Model.Price) ₼
+                        </td>
+                        
+                       
+                    </tr>
+                   
+               
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
